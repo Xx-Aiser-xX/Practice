@@ -1,6 +1,6 @@
 package Table;
-import jakarta.persistence.*;
 
+import jakarta.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -20,19 +20,16 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "код_товара")
     public int getProductCode() { return productCode;}
-
     public void setProductCode(int productCode) { this.productCode = productCode;}
 
     @Basic
     @Column(name = "название_товара")
     public String getName() { return name;}
-
     public void setName(String name) { this.name = name;}
 
     @Basic
     @Column(name = "цена")
     public double getPrice() { return price;}
-
     public void setPrice(double price) { this.price = price;}
 
     @OneToMany(mappedBy = "product", targetEntity = ListOfProduct.class,

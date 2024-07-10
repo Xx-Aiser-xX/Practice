@@ -3,7 +3,6 @@ package Relationship;
 import Table.Client;
 import Table.ListOfProduct;
 import jakarta.persistence.*;
-
 import java.util.Date;
 
 @Entity
@@ -24,6 +23,7 @@ public class Order {
         setDate(date);
         setTheQuantityOfTheProduct(theQuantityOfTheProduct);
     }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_заказа")
@@ -33,6 +33,7 @@ public class Order {
     public void setId(int id) {
         this.id = id;
     }
+
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_клиента", referencedColumnName = "id_клиента")

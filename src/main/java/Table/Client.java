@@ -1,7 +1,7 @@
 package Table;
+
 import Relationship.Order;
 import jakarta.persistence.*;
-
 import java.util.Set;
 
 @Entity
@@ -39,7 +39,6 @@ public class Client {
     public LoyaltyCard getLoyaltyCard() {
         return loyaltyCard;
     }
-
     public void setLoyaltyCard(LoyaltyCard loyaltyCard) {
         this.loyaltyCard = loyaltyCard;
     }

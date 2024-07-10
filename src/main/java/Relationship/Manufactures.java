@@ -3,7 +3,6 @@ package Relationship;
 import Table.Employee;
 import Table.ListOfProduct;
 import jakarta.persistence.*;
-
 import java.util.Date;
 
 @Entity

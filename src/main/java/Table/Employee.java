@@ -59,25 +59,24 @@ public class Employee {
     @Column(name = "дата_найма")
     @Temporal(TemporalType.DATE)
     public Date getDataOfHiring() { return dataOfHiring;}
-
     public void setDataOfHiring(Date dataOfHiring) {
         this.dataOfHiring = dataOfHiring;
     }
+
     @Basic
     @Column(name = "заработная_плата")
     public double getWages() { return wages;}
-
     public void setWages(double wages) { this.wages = wages;}
+
     @Basic
     @Column(name = "должность")
     public String getPost() { return post;}
-
     public void setPost(String post) { this.post = post;}
+
     @Basic
     @Column(name = "дата_рождения")
     @Temporal(TemporalType.DATE)
     public Date getBirthday() { return birthday;}
-
     public void setBirthday(Date birthday) { this.birthday = birthday;}
 
     @OneToMany(mappedBy = "employee", targetEntity = Manufactures.class,

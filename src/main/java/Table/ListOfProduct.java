@@ -1,8 +1,8 @@
 package Table;
+
 import Relationship.Manufactures;
 import Relationship.Order;
 import jakarta.persistence.*;
-
 import java.util.Set;
 
 @Entity
@@ -19,6 +19,7 @@ public class ListOfProduct {
         setProduct(product);
         setTheQuantityOfTheProduct(theQuantityOfTheProduct);
     }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_товара")
@@ -39,7 +40,6 @@ public class ListOfProduct {
     @Basic
     @Column(name = "кол_во_товара")
     public int getTheQuantityOfTheProduct() { return theQuantityOfTheProduct;}
-
     public void setTheQuantityOfTheProduct(int theQuantityOfTheProduct) {
         this.theQuantityOfTheProduct = theQuantityOfTheProduct;
     }
