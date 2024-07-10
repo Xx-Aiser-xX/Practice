@@ -13,6 +13,7 @@ public class BranchOfTheOrganization {
     private String address;
     private Set<Employee> employee;
 
+
     public BranchOfTheOrganization(int mainBranch, String nameBranch, String phone, String address){
         setMainBranch(mainBranch);
         setNameBranch(nameBranch);

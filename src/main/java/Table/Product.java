@@ -11,6 +11,7 @@ public class Product {
     private double price;
     private Set<ListOfProduct> listOfProducts;
 
+
     public Product(String name,double price){
         setName(name);
         setPrice(price);

@@ -9,7 +9,6 @@ public class LoyaltyCard {
     private int points;
     private String contactDetails;
     private String ownerStatus;
-
     private Client client;
 
     public LoyaltyCard(int points, String contactDetails, String ownerStatus){

@@ -12,6 +12,7 @@ public class Client {
     private LoyaltyCard loyaltyCard;
     private Set<Order> order;
 
+
     public Client(Human human, LoyaltyCard LoyaltyCard){
         setHuman(human);
         setLoyaltyCard(LoyaltyCard);

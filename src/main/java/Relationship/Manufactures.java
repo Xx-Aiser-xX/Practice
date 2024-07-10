@@ -15,6 +15,7 @@ public class Manufactures {
     private int quantityOfGoodsProduced;
     private Date expirationDate;
 
+
     public Manufactures(int id, Employee employee, ListOfProduct listOfProduct,
                         Date date, int quantityOfGoodsProduced, Date expirationDate){
         setId(id);
