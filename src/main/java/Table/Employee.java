@@ -1,43 +1,60 @@
 package Table;
-import jakarta.persistence.*;
 
+import Relationship.Manufactures;
+import jakarta.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "сотрудник")
 public class Employee {
     private int id;
-    private int branch;
-    private int idHuman;
+    private BranchOfTheOrganization branchOfTheOrganization;
+    private Human human;
     private Date dataOfHiring;
     private double wages;
     private String post;
     private Date birthday;
+    private Set<Manufactures> manufactures;
 
-    public Employee(int branch, int idHuman, Date dataOfHiring, double wages, String post, Date birthday){
-        setBranch(branch);
-        setIdHuman(idHuman);
+
+    public Employee(BranchOfTheOrganization branchOfTheOrganization, Human human,
+                    Date dataOfHiring, double wages, String post, Date birthday){
+
+        setBranchOfTheOrganization(branchOfTheOrganization);
+        setHuman(human);
         setDataOfHiring(dataOfHiring);
         setWages(wages);
         setPost(post);
         setBirthday(birthday);
     }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_сотрудника")
     public int getId() { return id;}
-
     public void setId(int id) { this.id = id;}
-    @Basic
-    @Column(name = "филиал")
-    public int getBranch() { return branch;}
 
-    public void setBranch(int branch) { this.branch = branch;}
-    @Basic
-    @Column(name = "id_человека")
-    public int getIdHuman() { return idHuman;}
 
-    public void setIdHuman(int idHuman) { this.idHuman = idHuman;}
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "филиал", referencedColumnName = "филиал")
+    public BranchOfTheOrganization getBranchOfTheOrganization() {
+        return branchOfTheOrganization;
+    }
+    public void setBranchOfTheOrganization(BranchOfTheOrganization branchOfTheOrganization) {
+        this.branchOfTheOrganization = branchOfTheOrganization;
+    }
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "id_человека", referencedColumnName = "id_человека")
+    public Human getHuman() {
+        return human;
+    }
+    public void setHuman(Human human) {
+        this.human = human;
+    }
+
+
     @Basic
     @Column(name = "дата_найма")
     @Temporal(TemporalType.DATE)
@@ -62,4 +79,13 @@ public class Employee {
     public Date getBirthday() { return birthday;}
 
     public void setBirthday(Date birthday) { this.birthday = birthday;}
+
+    @OneToMany(mappedBy = "employee", targetEntity = Manufactures.class,
+            fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    public Set<Manufactures> getManufactures() {
+        return manufactures;
+    }
+    public void setManufactures(Set<Manufactures> manufactures) {
+        this.manufactures = manufactures;
+    }
 }

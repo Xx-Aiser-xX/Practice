@@ -1,12 +1,15 @@
 package Table;
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "товар")
 public class Product {
     private int productCode;
     private String name;
     private double price;
+    private Set<ListOfProduct> listOfProducts;
 
     public Product(String name,double price){
         setName(name);
@@ -31,4 +34,13 @@ public class Product {
     public double getPrice() { return price;}
 
     public void setPrice(double price) { this.price = price;}
+
+    @OneToMany(mappedBy = "product", targetEntity = ListOfProduct.class,
+            fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    public Set<ListOfProduct> getListOfProducts() {
+        return listOfProducts;
+    }
+    public void setListOfProducts(Set<ListOfProduct> listOfProducts) {
+        this.listOfProducts = listOfProducts;
+    }
 }

@@ -9,6 +9,8 @@ public class LoyaltyCard {
     private String contactDetails;
     private String ownerStatus;
 
+    private Client client;
+
     public LoyaltyCard(int points, String contactDetails, String ownerStatus){
         setPoints(points);
         setContactDetails(contactDetails);
@@ -36,4 +38,12 @@ public class LoyaltyCard {
     public String getOwnerStatus() { return ownerStatus;}
 
     public void setOwnerStatus(String ownerStatus) { this.ownerStatus = ownerStatus;}
+    @OneToOne(mappedBy = "loyaltyCard", cascade = CascadeType.ALL)
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
 }
