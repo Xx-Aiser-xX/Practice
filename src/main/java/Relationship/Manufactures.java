@@ -18,12 +18,12 @@ public class Manufactures {
 
     public Manufactures(int id, Employee employee, ListOfProduct listOfProduct,
                         Date date, int quantityOfGoodsProduced, Date expirationDate){
-        setId(id);
-        setEmployee(employee);
-        setListOfProduct(listOfProduct);
-        setDate(date);
-        setQuantityOfGoodsProduced(quantityOfGoodsProduced);
-        setExpirationDate(expirationDate);
+        this.id = id;
+        this.employee = employee;
+        this.listOfProduct = listOfProduct;
+        this.date = date;
+        this.quantityOfGoodsProduced = quantityOfGoodsProduced;
+        this.expirationDate = expirationDate;
     }
 
     @Id
@@ -54,7 +54,6 @@ public class Manufactures {
         this.listOfProduct = listOfProduct;
     }
 
-    @Basic
     @Column(name = "дата")
     public Date getDate() {
         return date;
@@ -63,7 +62,6 @@ public class Manufactures {
         this.date = date;
     }
 
-    @Basic
     @Column(name = "кол_во_произведённого_товара")
     public int getQuantityOfGoodsProduced() {
         return quantityOfGoodsProduced;
@@ -72,7 +70,6 @@ public class Manufactures {
         this.quantityOfGoodsProduced = quantityOfGoodsProduced;
     }
 
-    @Basic
     @Column(name = "срок_годности")
     public Date getExpirationDate() {
         return expirationDate;

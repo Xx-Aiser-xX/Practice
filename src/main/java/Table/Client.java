@@ -13,9 +13,9 @@ public class Client {
     private Set<Order> order;
 
 
-    public Client(Human human, LoyaltyCard LoyaltyCard){
-        setHuman(human);
-        setLoyaltyCard(LoyaltyCard);
+    public Client(Human human, LoyaltyCard loyaltyCard){
+        this.human = human;
+        this.loyaltyCard = loyaltyCard;
     }
 
     @Id

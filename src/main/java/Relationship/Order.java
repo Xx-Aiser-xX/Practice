@@ -17,11 +17,11 @@ public class Order {
 
     public Order(int id, Client client, ListOfProduct listOfProduct,
                  Date date, int theQuantityOfTheProduct){
-        setId(id);
-        setClient(client);
-        setListOfProduct(listOfProduct);
-        setDate(date);
-        setTheQuantityOfTheProduct(theQuantityOfTheProduct);
+        this.id = id;
+        this.client = client;
+        this.listOfProduct = listOfProduct;
+        this.date = date;
+        this.theQuantityOfTheProduct = theQuantityOfTheProduct;
     }
 
     @Id
@@ -53,7 +53,6 @@ public class Order {
         this.listOfProduct = listOfProduct;
     }
 
-    @Basic
     @Column(name = "дата")
     public Date getDate() {
         return date;
@@ -62,7 +61,6 @@ public class Order {
         this.date = date;
     }
 
-    @Basic
     @Column(name = "кол_во_товара")
     public int getTheQuantityOfTheProduct() {
         return theQuantityOfTheProduct;

@@ -16,8 +16,8 @@ public class ListOfProduct {
 
 
     public ListOfProduct(Product product, int theQuantityOfTheProduct){
-        setProduct(product);
-        setTheQuantityOfTheProduct(theQuantityOfTheProduct);
+        this.product = product;
+        this.theQuantityOfTheProduct = theQuantityOfTheProduct;
     }
 
     @Id
@@ -37,7 +37,6 @@ public class ListOfProduct {
     }
 
 
-    @Basic
     @Column(name = "кол_во_товара")
     public int getTheQuantityOfTheProduct() { return theQuantityOfTheProduct;}
     public void setTheQuantityOfTheProduct(int theQuantityOfTheProduct) {

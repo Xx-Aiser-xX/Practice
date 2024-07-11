@@ -21,12 +21,12 @@ public class Employee {
     public Employee(BranchOfTheOrganization branchOfTheOrganization, Human human,
                     Date dataOfHiring, double wages, String post, Date birthday){
 
-        setBranchOfTheOrganization(branchOfTheOrganization);
-        setHuman(human);
-        setDataOfHiring(dataOfHiring);
-        setWages(wages);
-        setPost(post);
-        setBirthday(birthday);
+        this.branchOfTheOrganization = branchOfTheOrganization;
+        this.human = human;
+        this.dataOfHiring = dataOfHiring;
+        this.wages = wages;
+        this.post = post;
+        this.birthday = birthday;
     }
 
     @Id
@@ -55,7 +55,6 @@ public class Employee {
     }
 
 
-    @Basic
     @Column(name = "дата_найма")
     @Temporal(TemporalType.DATE)
     public Date getDataOfHiring() { return dataOfHiring;}
@@ -63,17 +62,14 @@ public class Employee {
         this.dataOfHiring = dataOfHiring;
     }
 
-    @Basic
     @Column(name = "заработная_плата")
     public double getWages() { return wages;}
     public void setWages(double wages) { this.wages = wages;}
 
-    @Basic
     @Column(name = "должность")
     public String getPost() { return post;}
     public void setPost(String post) { this.post = post;}
 
-    @Basic
     @Column(name = "дата_рождения")
     @Temporal(TemporalType.DATE)
     public Date getBirthday() { return birthday;}

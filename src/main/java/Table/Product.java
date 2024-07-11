@@ -13,8 +13,8 @@ public class Product {
 
 
     public Product(String name,double price){
-        setName(name);
-        setPrice(price);
+        this.name = name;
+        this.price = price;
     }
 
     @Id
@@ -23,12 +23,10 @@ public class Product {
     public int getProductCode() { return productCode;}
     public void setProductCode(int productCode) { this.productCode = productCode;}
 
-    @Basic
     @Column(name = "название_товара")
     public String getName() { return name;}
     public void setName(String name) { this.name = name;}
 
-    @Basic
     @Column(name = "цена")
     public double getPrice() { return price;}
     public void setPrice(double price) { this.price = price;}

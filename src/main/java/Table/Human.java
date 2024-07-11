@@ -16,9 +16,9 @@ public class Human {
 
 
     public Human(String firstName,String lastName,String patronymic){
-        setFirstName(firstName);
-        setLastName(lastName);
-        setPatronymic(patronymic);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.patronymic = patronymic;
     }
 
     @Id
@@ -27,17 +27,14 @@ public class Human {
     public int getId() { return id;}
     public void setId(int id) { this.id = id;}
 
-    @Basic
     @Column(name = "имя")
     public String getFirstName() { return firstName;}
     public void setFirstName(String firstName) { this.firstName = firstName;}
 
-    @Basic
     @Column(name = "фамилия")
     public String getLastName() { return lastName;}
     public void setLastName(String lastName) { this.lastName = lastName;}
 
-    @Basic
     @Column(name = "отчество")
     public String getPatronymic() { return patronymic;}
     public void setPatronymic(String patronymic) { this.patronymic = patronymic;}
